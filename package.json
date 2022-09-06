@@ -1,0 +1,22 @@
+{
+  "name": "@uiu/events",
+  "version": "1.0.0",
+  "description": "simple event system",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uiuytb/events.git"
+  },
+  "keywords": [
+    "events"
+  ],
+  "author": "uiu_ytb_",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uiuytb/events/issues"
+  },
+  "homepage": "https://github.com/uiuytb/events#readme"
+}
