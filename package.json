@@ -1,9 +1,11 @@
 {
 	"name": "@uiuytb/events",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "simple event system",
 	"main": "src/index.js",
-	"scripts": {},
+	"scripts": {
+		"build": "tsc --declaration"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/uiuytb/events.git"

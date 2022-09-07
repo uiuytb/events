@@ -11,6 +11,7 @@ export default class Events {
         }
         this.listeners[name].push(callback);
     }
+    on = this.addListener;
     /**
      *
      * @param name The name of the event where the listener is located

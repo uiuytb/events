@@ -6,6 +6,7 @@ export default class Events {
      * @param callback The callback function to execute
      */
     addListener(name: string, callback: (...data: any[]) => void): void;
+    on: (name: string, callback: (...data: any[]) => void) => void;
     /**
      *
      * @param name The name of the event where the listener is located
