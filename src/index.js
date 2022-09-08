@@ -1,21 +1,46 @@
-export default class Events {
+/**
+ *
+ * @date 06/09/2022 - 16:07:00
+ * @author uiuytb
+ *
+ * @export
+ * @class Events
+ * @typedef {Events}
+ */
+export class Events {
+    /**
+     * @date 06/09/2022 - 16:07:00
+     * @author uiuytb
+     * @private
+     */
     listeners = {};
     /**
      *
-     * @param name The name of the event to subscribe
-     * @param callback The callback function to execute
+     * @date 07/09/2022 - 14:01:00
+     * @author uiuytb
+     * @public
      */
-    addListener(name, callback) {
+    on(name, callback) {
         if (!(name in this.listeners)) {
             this.listeners[name] = [];
         }
         this.listeners[name].push(callback);
     }
-    on = this.addListener;
     /**
      *
-     * @param name The name of the event where the listener is located
-     * @param listener the listener to remove
+     * @date 06/09/2022 - 16:07:00
+     * @author uiuytb
+     * @public
+     * @deprecated
+     */
+    addListener = this.on;
+    /**
+     * @date 06/09/2022 - 16:07:00
+     * @author uiuytb
+     *
+     * @public
+     * @param {string} name the event name
+     * @param {(...data: any) => void} listener the listener to remove
      */
     removeListener(name, listener) {
         if (name in this.listeners) {
@@ -23,9 +48,12 @@ export default class Events {
         }
     }
     /**
+     * @date 08/09/2022 - 11:04:41
+     * @author uiuytb
      *
-     * @param name The event to trigger
-     * @param data The data to transmit
+     * @public
+     * @param {string} name the event name
+     * @param {...any[]} data the data to send
      */
     emit(name, ...data) {
         if (name in this.listeners) {
@@ -35,3 +63,4 @@ export default class Events {
         }
     }
 }
+export default Events;

@@ -1,26 +1,57 @@
-export default class Events {
+/**
+ *
+ * @date 06/09/2022 - 16:07:00
+ * @author uiuytb
+ *
+ * @export
+ * @class Events
+ * @typedef {Events}
+ */
+export class Events {
+	/**
+	 * @date 06/09/2022 - 16:07:00
+	 * @author uiuytb
+	 * @private
+	 */
 	private listeners: { [name: string]: ((...data: any[]) => void)[] } = {};
 
 	/**
 	 *
-	 * @param name The name of the event to subscribe
-	 * @param callback The callback function to execute
+	 * @date 07/09/2022 - 14:01:00
+	 * @author uiuytb
+	 * @public
 	 */
-	public addListener(name: string, callback: (...data: any[]) => void) {
+	public on(name: string, callback: (...data: any[]) => void): void {
 		if (!(name in this.listeners)) {
 			this.listeners[name] = [];
 		}
 		this.listeners[name].push(callback);
 	}
 
-	public on = this.addListener;
-
 	/**
 	 *
-	 * @param name The name of the event where the listener is located
-	 * @param listener the listener to remove
+	 * @date 06/09/2022 - 16:07:00
+	 * @author uiuytb
+	 * @public
+	 * @deprecated
 	 */
-	public removeListener(name: string, listener: (...data: any) => void) {
+	public addListener: (
+		name: string,
+		callback: (...data: any[]) => void
+	) => void = this.on;
+
+	/**
+	 * @date 06/09/2022 - 16:07:00
+	 * @author uiuytb
+	 *
+	 * @public
+	 * @param {string} name the event name
+	 * @param {(...data: any) => void} listener the listener to remove
+	 */
+	public removeListener(
+		name: string,
+		listener: (...data: any) => void
+	): void {
 		if (name in this.listeners) {
 			this.listeners[name] = this.listeners[name].filter(
 				(f) => f !== listener
@@ -29,9 +60,12 @@ export default class Events {
 	}
 
 	/**
+	 * @date 08/09/2022 - 11:04:41
+	 * @author uiuytb
 	 *
-	 * @param name The event to trigger
-	 * @param data The data to transmit
+	 * @public
+	 * @param {string} name the event name
+	 * @param {...any[]} data the data to send
 	 */
 	public emit(name: string, ...data: any[]) {
 		if (name in this.listeners) {
@@ -41,3 +75,5 @@ export default class Events {
 		}
 	}
 }
+
+export default Events;
