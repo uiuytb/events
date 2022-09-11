@@ -16,24 +16,18 @@ export class Events {
     listeners = {};
     /**
      *
-     * @date 07/09/2022 - 14:01:00
+     * @date 11/09/2022 - 12:13:00
      * @author uiuytb
      * @public
      */
     on(name, callback) {
         if (!(name in this.listeners)) {
+            // @ts-ignore
             this.listeners[name] = [];
         }
+        // @ts-ignore
         this.listeners[name].push(callback);
     }
-    /**
-     *
-     * @date 06/09/2022 - 16:07:00
-     * @author uiuytb
-     * @public
-     * @deprecated
-     */
-    addListener = this.on;
     /**
      * @date 06/09/2022 - 16:07:00
      * @author uiuytb

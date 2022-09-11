@@ -16,19 +16,11 @@ export declare class Events {
     private listeners;
     /**
      *
-     * @date 07/09/2022 - 14:01:00
+     * @date 11/09/2022 - 12:13:00
      * @author uiuytb
      * @public
      */
-    on(name: string, callback: (...data: any[]) => void): void;
-    /**
-     *
-     * @date 06/09/2022 - 16:07:00
-     * @author uiuytb
-     * @public
-     * @deprecated
-     */
-    addListener: (name: string, callback: (...data: any[]) => void) => void;
+    on<name = string, args = any>(name: name, callback: (data: args) => void): void;
     /**
      * @date 06/09/2022 - 16:07:00
      * @author uiuytb
