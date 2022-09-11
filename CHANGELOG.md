@@ -4,6 +4,8 @@ All Changes will be documented in this file.
 
 ## v2.0.0
 
+### Changes
+
 -   Remove addEventListener method
 -   Add type possibility for `on` method
 
