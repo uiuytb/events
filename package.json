@@ -1,22 +1,25 @@
 {
-  "name": "@uiu/events",
-  "version": "1.0.0",
-  "description": "simple event system",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/uiuytb/events.git"
-  },
-  "keywords": [
-    "events"
-  ],
-  "author": "uiu_ytb_",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/uiuytb/events/issues"
-  },
-  "homepage": "https://github.com/uiuytb/events#readme"
+	"name": "@uiuytb/events",
+	"version": "2.0.0",
+	"description": "simple event system",
+	"main": "src/index.js",
+	"scripts": {
+		"build": "tsc --declaration",
+		"prepublishOnly": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/uiuytb/events.git"
+	},
+	"keywords": [
+		"events"
+	],
+	"author": "uiu_ytb_",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/uiuytb/events/issues"
+	},
+	"homepage": "https://github.com/uiuytb/events#readme",
+	"type": "module",
+	"types": "src/index.d.ts"
 }
